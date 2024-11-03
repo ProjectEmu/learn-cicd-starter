@@ -24,7 +24,7 @@ type apiConfig struct {
 //go:embed static/*
 var staticFiles embed.FS
 
-// Big changes are happening here....
+// Big changes are happening here....And wow, these instructions are kinda sucking for lesson 5
 func main() {
 	err := godotenv.Load(".env")
 	if err != nil {
