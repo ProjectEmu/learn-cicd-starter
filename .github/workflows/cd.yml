@@ -18,3 +18,17 @@ jobs:
 
       - name: Set up Go
         run: ./scripts/buildprod.sh
+
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+
+      - name: Configure Docker to use Google Artifact Registry
+        run: gcloud auth configure-docker REGION-docker.pkg.dev
+
+      - name: Build and Push Docker Image
+        run: |
+          IMAGE_NAME="us-central1-docker.pkg.dev/notely-440709/notely-ar-repo/notely"
+          gcloud builds submit --tag ${IMAGE_NAME}:latest .
+          
