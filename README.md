@@ -1,3 +1,5 @@
+![ALT_TEXT](https://github.com/ProjectEmu/learn-cicd-starter/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+
 # learn-cicd-starter (Notely)
 
 This repo contains the starter code for the "Notely" application for the "Learn CICD" course on [Boot.dev](https://boot.dev).
