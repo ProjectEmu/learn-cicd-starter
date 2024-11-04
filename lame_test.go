@@ -14,11 +14,6 @@ import (
 	"github.com/bootdotdev/learn-cicd-starter/internal/auth"
 )
 
-type t_apiConfig struct {
-	apiConfig
-	DB MockDBInterface // Use MockDBInterface instead of *database.Queries
-}
-
 // Define a minimal interface with only the methods you need
 type MockDBInterface interface {
 	CreateUser(ctx context.Context, name string) (string, error)
