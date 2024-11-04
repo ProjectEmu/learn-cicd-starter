@@ -1,4 +1,4 @@
-![ALT_TEXT](https://github.com/ProjectEmu/learn-cicd-starter/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+![ALT_TEXT](https://github.com/ProjectEmu/learn-cicd-starter/actions/workflows/ci.yml/badge.svg)
 
 # learn-cicd-starter (Notely)
 
