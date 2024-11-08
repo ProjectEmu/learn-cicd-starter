@@ -26,7 +26,17 @@ jobs:
 
       - name: Run gosec
         run: gosec ./...
+  
+      - name: Check for sensitive credentials
+        run: |
+          git diff HEAD --exit-code -- . ':(exclude).env' | grep -iE '(password|secret|apikey|token|database_url|connection_string)'
+        continue-on-error: true
 
+      - name: Fail if sensitive credentials are detected
+        if: failure()
+        run: |
+          echo "Sensitive information detected in the diff! Please remove it before committing."
+          exit 1
 
   style:
     name: Style
